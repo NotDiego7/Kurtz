@@ -6,35 +6,97 @@ exports.newProduct = async (req, res, next) => {
 
         res.status(201).json({
             success: true,
-            data: product,
+            data: product
         });
+
     } catch (error) {
         res.status(400).json({
             success: false,
-            error: error.message, 
+            error: error.message
         });
+    }
+};
+
+
+exports.updateProduct = async (req, res, next) => {
+    try {
+        const productId = req.params.id;
+
+        if (!productId) {
+            return res.status(400).json({
+                success: false,
+                message: 'No product ID was provided.'
+            })
+        };
+
+        const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, {
+            new: true,
+            runValidators: true
+        });
+
+        if (!updatedProduct) {
+            return res.status(404).json({
+                success: false,
+                message: 'No product with the provided ID was found.'
+            })
+        };
+
+        res.status(200).json({
+            success: true,
+            data: updatedProduct
+        })
+
+    } catch (error) {
+
+        // if (error instanceof mongoose.Error.ValidationError) {
+        //     res.status(400).json({
+        //         success: false,
+        //         error: "Validation failed. Please check your input." 
+        //     });
+        // } else {
+        //     console.error(error);
+        //     res.status(500).json({
+        //         success: false,
+        //         error: "An internal server error occurred."
+        //     }); // TEMPORARY: Best to handle errors in a centralized manner |  
+
+        res.status(500).json({
+            success: false,
+            error: error
+        })
     }
 };
 
 
 exports.getProduct = async (req, res, next) => {
     try {
-        console.log('The try block did execute')
-        if (!req.params.id) {
-            throw new Error("No product ID was passed; Keep in mind, IDs can only be passed via params.");
-        }
+        const productId = req.params.id;
 
-        const product = await Product.findOne({ id: req.params.id });
+        if (!productId) {
+            return res.status(400).json({
+                success: false,
+                message: 'No product ID was provided.'
+            })
+        };
+
+        const product = await Product.findOne({ id: productId });
+
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: 'No product with the provided ID was found'
+            })
+        }
 
         res.status(200).json({
             success: true,
             data: product
         })
+
     } catch (error) {
-        console.log('The try block did NOT execute')
-        res.status(400).json({
+        res.status(500).json({
             success: false,
-            error: error.message
+            error: error
         })
     }
 };
@@ -48,10 +110,11 @@ exports.getAllProducts = async (req, res, next) => {
             success: true,
             data: allProducts
         })
+
     } catch (error) {
-        res.status(400).json({
+        res.status(500).json({
             success: false,
-            error: error,
+            error: error
         })
     }
 };
