@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        required: true,
-        trim: true,
-    },
     name: {
         type: String,
         required: [true, 'Please enter a product name.'],
@@ -34,7 +29,7 @@ const productSchema = new mongoose.Schema({
         {
             name: {
                 type: String,
-                required: true,
+                required: true
             },
             rating: {
                 type: Number,

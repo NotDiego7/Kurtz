@@ -20,7 +20,7 @@ exports.newProduct = async (req, res, next) => {
 
 exports.updateProduct = async (req, res, next) => {
     try {
-        const productId = req.params.id;
+        const productId = req.params._id;
 
         if (!productId) {
             return res.status(400).json({
@@ -70,7 +70,7 @@ exports.updateProduct = async (req, res, next) => {
 
 exports.getProduct = async (req, res, next) => {
     try {
-        const productId = req.params.id;
+        const productId = req.params._id;
 
         if (!productId) {
             return res.status(400).json({
@@ -118,3 +118,32 @@ exports.getAllProducts = async (req, res, next) => {
         })
     }
 };
+
+
+exports.deleteProduct = async (req, res, next) => {
+    try {
+        const productId = req.params._id;
+
+        if (!productId) {
+            return res.status(400).json({
+                success: false,
+                message: 'No product ID was provided.'
+            })
+        };
+
+        const deletedProduct = Product.findByIdAndDelete(productId);
+
+        if (!deletedProduct) {
+            return res.status(404).json({
+                success: false,
+                message: 'No product found with this ID'
+            })
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error
+        })
+    }
+}

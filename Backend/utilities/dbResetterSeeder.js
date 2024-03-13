@@ -7,7 +7,7 @@ const Product = require('../models/product');
 const connectToDatabase = require('../config/database');
 connectToDatabase();
 
-console.log('Psst, the seeder is running') // DELETE THIS LOL
+console.log('Psst, the resetter/seeder is running')
 
 /**
  * Clears all documents from the products collection.
@@ -38,5 +38,5 @@ const seedProductsDB = async () => {
     }
 }
 
-clearProductsDB();
+// clearProductsDB();
 seedProductsDB();
