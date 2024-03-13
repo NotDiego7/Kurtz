@@ -1,11 +1,15 @@
 const Product = require('../models/product');
+const { isProductIdProvided } = require('../utilities/helpers');
 
+
+// => /admin/product/new
 exports.newProduct = async (req, res, next) => {
     try {
         const product = await Product.create(req.body);
 
         res.status(201).json({
             success: true,
+            message: 'Product created successfully.',
             data: product
         });
 
@@ -18,16 +22,12 @@ exports.newProduct = async (req, res, next) => {
 };
 
 
+// => /admin/product/:_id/update
 exports.updateProduct = async (req, res, next) => {
     try {
         const productId = req.params._id;
 
-        if (!productId) {
-            return res.status(400).json({
-                success: false,
-                message: 'No product ID was provided.'
-            })
-        };
+        isProductIdProvided(productId);
 
         const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, {
             new: true,
@@ -43,6 +43,7 @@ exports.updateProduct = async (req, res, next) => {
 
         res.status(200).json({
             success: true,
+            message: 'Product updated successfully.',
             data: updatedProduct
         })
 
@@ -62,29 +63,25 @@ exports.updateProduct = async (req, res, next) => {
 
         res.status(500).json({
             success: false,
-            error: error
+            error: error.message
         })
     }
 };
 
 
+// => /product/:_id
 exports.getProduct = async (req, res, next) => {
     try {
         const productId = req.params._id;
 
-        if (!productId) {
-            return res.status(400).json({
-                success: false,
-                message: 'No product ID was provided.'
-            })
-        };
+        isProductIdProvided(productId);
 
-        const product = await Product.findOne({ id: productId });
+        const product = await Product.findById(productId);
 
         if (!product) {
             return res.status(404).json({
                 success: false,
-                message: 'No product with the provided ID was found'
+                message: 'No product with the provided ID was found.'
             })
         }
 
@@ -96,12 +93,13 @@ exports.getProduct = async (req, res, next) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            error: error
+            error: error.message
         })
     }
 };
 
 
+// => /products
 exports.getAllProducts = async (req, res, next) => {
     try {
         const allProducts = await Product.find({});
@@ -114,36 +112,37 @@ exports.getAllProducts = async (req, res, next) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            error: error
+            error: error.message
         })
     }
 };
 
 
+// => /admin/product/:_id/delete
 exports.deleteProduct = async (req, res, next) => {
     try {
         const productId = req.params._id;
 
-        if (!productId) {
-            return res.status(400).json({
-                success: false,
-                message: 'No product ID was provided.'
-            })
-        };
+        isProductIdProvided(productId);
 
-        const deletedProduct = Product.findByIdAndDelete(productId);
+        const deletedProduct = await Product.findByIdAndDelete(productId);
 
         if (!deletedProduct) {
             return res.status(404).json({
                 success: false,
-                message: 'No product found with this ID'
+                message: 'No product found with this ID.'
             })
         }
+
+        res.status(200).json({
+            success: true,
+            message: 'Product deleted successfully.'
+        })
 
     } catch (error) {
         res.status(500).json({
             success: false,
-            error: error
+            error: error.message
         })
     }
 }
