@@ -1,6 +1,7 @@
 const Product = require('../models/product');
 const { isProductIdProvided } = require('../utilities/helpers');
 
+// TODO: I think we will end up getting rid of isProductIdProvided and replace it with a single findById
 
 // => /admin/product/new
 exports.newProduct = async (req, res, next) => {
