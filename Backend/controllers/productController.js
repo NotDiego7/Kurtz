@@ -1,5 +1,6 @@
 const Product = require('../models/product');
 const { isProductIdProvided } = require('../utilities/helpers');
+const ErrorHandler = require('../utilities/errorHandler');
 
 // TODO: I think we will end up getting rid of isProductIdProvided and replace it with a single findById
 
@@ -7,17 +8,18 @@ const { isProductIdProvided } = require('../utilities/helpers');
 exports.newProduct = async (req, res, next) => {
     try {
         const product = await Product.create(req.body);
-
+        
         res.status(201).json({
             success: true,
             message: 'Product created successfully.',
             data: product
         });
 
-    } catch (error) {
+    } catch (err) {
+        ErrorHandler(err, req, res, next);
         res.status(400).json({
             success: false,
-            error: error.message
+            error: err
         });
     }
 };
@@ -75,15 +77,14 @@ exports.getProduct = async (req, res, next) => {
     try {
         const productId = req.params._id;
 
-        isProductIdProvided(productId);
+        if (!productId) {
+            return next(new ErrorHandler('No product ID was provided.', 400)); // Passes to errorMiddleware
+        }
 
         const product = await Product.findById(productId);
 
         if (!product) {
-            return res.status(404).json({
-                success: false,
-                message: 'No product with the provided ID was found.'
-            })
+            return next(new ErrorHandler('Product not found.', 404));
         }
 
         res.status(200).json({

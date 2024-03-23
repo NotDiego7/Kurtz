@@ -6,3 +6,4 @@ exports.isProductIdProvided = (productId) => {
         })
     };
 }
+
