@@ -1,15 +1,15 @@
 const express = require('express');
-const expressApp = express();
+const app = express();
 
 
-expressApp.use(express.json());
+app.use(express.json());
 
 
-const products = require('./routes/product');
-expressApp.use('/api/v1', products);
+const productsRouter = require('./routes/product');
+app.use('/api/v1', productsRouter);
 
 
 const errorMiddleware = require('./middleware/errors');
-expressApp.use(errorMiddleware);
+app.use(errorMiddleware);
 
-module.exports = expressApp;
+module.exports = app;

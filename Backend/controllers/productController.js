@@ -1,8 +1,8 @@
 const Product = require('../models/product');
-const { isProductIdProvided } = require('../utilities/helpers');
 const ErrorHandler = require('../utilities/errorHandler');
+const { isValidObjectId } = require('mongoose');
+// TODO -> Production || Development Error Handling Separation
 
-// TODO: I think we will end up getting rid of isProductIdProvided and replace it with a single findById
 
 // => /admin/product/new
 exports.newProduct = async (req, res, next) => {
@@ -15,11 +15,10 @@ exports.newProduct = async (req, res, next) => {
             data: product
         });
 
-    } catch (err) {
-        ErrorHandler(err, req, res, next);
+    } catch (error) {
         res.status(400).json({
             success: false,
-            error: err
+            error: error.message
         });
     }
 };
@@ -27,77 +26,48 @@ exports.newProduct = async (req, res, next) => {
 
 // => /admin/product/:_id/update
 exports.updateProduct = async (req, res, next) => {
-    try {
-        const productId = req.params._id;
+    const productId = req.params._id;
 
-        isProductIdProvided(productId);
+    if (!isValidObjectId(productId)) {
+        return next(new ErrorHandler('Invalid product ID.', 404));
+    };
 
-        const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, {
-            new: true,
-            runValidators: true
-        });
+    const updatedProduct = await Product.findByIdAndUpdate(productId, req.body, {
+        new: true,
+        runValidators: true
+    });
 
-        if (!updatedProduct) {
-            return res.status(404).json({
-                success: false,
-                message: 'No product with the provided ID was found.'
-            })
-        };
+    if (!updatedProduct) {
+        return next(new ErrorHandler('No product with the provided ID was found.', 404));
+    };
 
-        res.status(200).json({
-            success: true,
-            message: 'Product updated successfully.',
-            data: updatedProduct
-        })
-
-    } catch (error) {
-
-        // if (error instanceof mongoose.Error.ValidationError) {
-        //     res.status(400).json({
-        //         success: false,
-        //         error: "Validation failed. Please check your input." 
-        //     });
-        // } else {
-        //     console.error(error);
-        //     res.status(500).json({
-        //         success: false,
-        //         error: "An internal server error occurred."
-        //     }); // TEMPORARY: Best to handle errors in a centralized manner |  
-
-        res.status(500).json({
-            success: false,
-            error: error.message
-        })
-    }
+    res.status(200).json({
+        success: true,
+        message: 'Product updated successfully.',
+        data: updatedProduct
+    });
 };
 
 
 // => /product/:_id
 exports.getProduct = async (req, res, next) => {
-    try {
-        const productId = req.params._id;
+    const productId = req.params._id;
 
-        if (!productId) {
-            return next(new ErrorHandler('No product ID was provided.', 400)); // Passes to errorMiddleware
-        }
+    if (!isValidObjectId(productId)) {
+        return next(new ErrorHandler('Invalid product ID.', 404));
+    };
 
-        const product = await Product.findById(productId);
+    const product = await Product.findById(productId);
 
-        if (!product) {
-            return next(new ErrorHandler('Product not found.', 404));
-        }
+    if (!product) {
+        return next(new ErrorHandler('Product not found.', 404));
+    };
+    
+    res.status(200).json({
+        success: true,
+        data: product
+    });
 
-        res.status(200).json({
-            success: true,
-            data: product
-        })
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            error: error.message
-        })
-    }
 };
 
 
@@ -109,42 +79,33 @@ exports.getAllProducts = async (req, res, next) => {
         res.status(200).json({
             success: true,
             data: allProducts
-        })
+        });
 
     } catch (error) {
         res.status(500).json({
             success: false,
             error: error.message
-        })
+        });
     }
 };
 
 
 // => /admin/product/:_id/delete
 exports.deleteProduct = async (req, res, next) => {
-    try {
-        const productId = req.params._id;
+    const productId = req.params._id;
 
-        isProductIdProvided(productId);
+    if (!isValidObjectId(productId)) {
+        return next(new ErrorHandler('Invalid product ID.', 404));
+    };
 
-        const deletedProduct = await Product.findByIdAndDelete(productId);
+    const deletedProduct = await Product.findByIdAndDelete(productId);
 
-        if (!deletedProduct) {
-            return res.status(404).json({
-                success: false,
-                message: 'No product found with this ID.'
-            })
-        }
+    if (!deletedProduct) {
+        return next(new ErrorHandler('No product with the provided ID was found.', 404));
+    };
 
-        res.status(200).json({
-            success: true,
-            message: 'Product deleted successfully.'
-        })
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            error: error.message
-        })
-    }
+    res.status(200).json({
+        success: true,
+        message: 'Product deleted successfully.'
+    });
 }
