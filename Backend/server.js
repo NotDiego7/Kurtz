@@ -7,9 +7,9 @@ const connectToDatabase = require('./config/database');
 connectToDatabase();
 
 
-const expressApp = require("./app");
+const app = require("./app");
 const port = process.env.PORT || 3001;
 
-expressApp.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server initiated on port: ${process.env.PORT} from ${process.env.NODE_ENV}`);
 });

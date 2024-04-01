@@ -1,7 +1,7 @@
 const Product = require('../models/product');
 const ErrorHandler = require('../utilities/errorHandler');
 const { isValidObjectId } = require('mongoose');
-// TODO -> Production || Development Error Handling Separation
+const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 
 
 // => /admin/product/new
@@ -50,7 +50,7 @@ exports.updateProduct = async (req, res, next) => {
 
 
 // => /product/:_id
-exports.getProduct = async (req, res, next) => {
+exports.getProduct = catchAsyncErrors(async (req, res, next) => {
     const productId = req.params._id;
 
     if (!isValidObjectId(productId)) {
@@ -68,7 +68,7 @@ exports.getProduct = async (req, res, next) => {
         data: product
     });
 
-};
+});
 
 
 // => /products

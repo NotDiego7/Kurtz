@@ -1,0 +1,124 @@
+<mxfile host="65bd71144e">
+    <diagram id="jeVRD9gRO1LBd0HFrmdf" name="Page-1">
+        <mxGraphModel dx="841" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="73" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;pre style=&quot;&quot;&gt;&lt;font face=&quot;Georgia&quot; style=&quot;font-size: 36px; font-weight: normal;&quot;&gt;database.js&lt;/font&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a8a8a8;fillStyle=auto;strokeColor=#b85450;align=center;shadow=1;noLabel=0;labelPadding=0;portConstraintRotation=0;snapToPoint=0;metaEdit=0;backgroundOutline=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;strokeOpacity=100;fillOpacity=50;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="10" width="1200" height="840" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=elbowEdgeStyle;html=1;startArrow=none;endArrow=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="989.8" y="370" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <UserObject label="dotenv.config()" treeRoot="1" id="14">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};rounded=0;glass=0;shadow=0;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1" collapsed="1">
+                        <mxGeometry x="930" y="100" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="31" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="17" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="config.env" style="whiteSpace=wrap;html=1;rounded=1;arcSize=50;align=center;verticalAlign=middle;strokeWidth=1;autosize=1;spacing=4;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};shadow=0;glass=0;sketch=0;gradientColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1020" y="330" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=entityRelationEdgeStyle;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="990" y="370" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="20" target="26" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=entityRelationEdgeStyle;html=1;startArrow=none;endArrow=none;segment=10;curved=1;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="20" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="process.env" style="whiteSpace=wrap;html=1;rounded=1;arcSize=50;align=center;verticalAlign=middle;strokeWidth=1;autosize=1;spacing=4;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;entityRelationEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;,&quot;segment&quot;:10,&quot;curved&quot;:1,&quot;sourcePerimeterSpacing&quot;:0,&quot;targetPerimeterSpacing&quot;:0};shadow=0;glass=0;sketch=0;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="330" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=elbowEdgeStyle;html=1;startArrow=none;endArrow=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="26" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="connectToDatabase()" treeRoot="1" id="26">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};rounded=0;glass=0;shadow=0;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1" collapsed="1">
+                        <mxGeometry x="1480" y="310" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="29" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1150" y="330" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="32" target="45" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Try/Catch" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1490" y="490" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=none;endArrow=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="41" target="43" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="console.error" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#f8cecc;strokeColor=#b85450;rounded=1;glass=0;shadow=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1660" y="510" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" source="32" target="41" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1640" y="530" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="process.exit()" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#f8cecc;strokeColor=#b85450;rounded=1;glass=0;shadow=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1870" y="510" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="console.log(&lt;br&gt;'connected'&lt;br&gt;)" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;glass=0;shadow=1;autosize=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="1490" y="700" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="&lt;p style=&quot;line-height: 120%;&quot;&gt;&lt;/p&gt;&lt;pre style=&quot;&quot;&gt;&lt;font face=&quot;Georgia&quot; style=&quot;font-size: 36px; font-weight: normal;&quot;&gt;database.js&lt;/font&gt;&lt;/pre&gt;&lt;p&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#a8a8a8;fillStyle=auto;strokeColor=#b85450;align=center;shadow=1;noLabel=0;labelPadding=0;portConstraintRotation=0;snapToPoint=0;metaEdit=0;backgroundOutline=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;connectable=0;strokeOpacity=100;fillOpacity=50;" vertex="1" parent="1">
+                    <mxGeometry x="2480" y="10" width="1200" height="840" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" style="edgeStyle=elbowEdgeStyle;html=1;startArrow=classic;endArrow=classic;rounded=1;endFill=1;startFill=1;" edge="1" source="63" target="66" parent="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <UserObject label="connectToDatabase()" treeRoot="1" id="63">
+                    <mxCell style="whiteSpace=wrap;html=1;align=center;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};rounded=0;glass=0;shadow=0;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" collapsed="1" parent="1">
+                        <mxGeometry x="3140" y="313" width="120" height="60" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <mxCell id="65" value="&lt;font face=&quot;Georgia&quot; style=&quot;background-color: rgb(51, 255, 153);&quot;&gt;&amp;nbsp;Try&amp;nbsp;&lt;/font&gt;" style="edgeStyle=none;html=1;startArrow=classic;startFill=1;endArrow=classic;endFill=1;labelBorderColor=none;" edge="1" source="66" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="3510" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="Try/Catch" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e51400;strokeColor=#B20000;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="3150" y="490" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="edgeStyle=elbowEdgeStyle;html=1;elbow=horizontal;startArrow=none;endArrow=none;" edge="1" source="68" target="70" parent="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="console.error(&lt;br&gt;'Failed.'&lt;br&gt;)" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#f8cecc;strokeColor=#b85450;rounded=1;glass=0;shadow=1;" vertex="1" parent="1">
+                    <mxGeometry x="3150" y="760" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value=" Catch " style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=none;rounded=0;curved=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=#FF3333;fontColor=#FFFFFF;labelBorderColor=none;fontFamily=Georgia;" edge="1" source="66" target="68" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="3240" y="600" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="84" style="edgeStyle=elbowEdgeStyle;shape=connector;curved=0;rounded=0;elbow=vertical;html=1;startArrow=none;endArrow=cross;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=#FF3333;labelBorderColor=#CCCCCC;strokeColor=default;fontFamily=Georgia;fontSize=11;fontColor=#000000;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;endFill=0;" edge="1" parent="1" source="70">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="3550" y="790" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="70" value="process.exit()" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#f8cecc;strokeColor=#b85450;rounded=1;glass=0;shadow=1;" vertex="1" parent="1">
+                    <mxGeometry x="3360" y="760" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="console.log(&lt;br&gt;'Connected'&lt;br&gt;)" style="whiteSpace=wrap;html=1;align=center;verticalAlign=middle;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;glass=0;shadow=1;autosize=0;imageAspect=1;" vertex="1" parent="1">
+                    <mxGeometry x="3500" y="340" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="MongoDB" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;rounded=1;shadow=1;sketch=0;fillStyle=auto;strokeColor=#d6b656;fontFamily=Georgia;fontSize=36;fillColor=#fff2cc;gradientColor=#ffd966;" vertex="1" parent="1">
+                    <mxGeometry x="4170" y="330" width="340" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="&lt;span style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;Connection&lt;/font&gt;&lt;/span&gt;" style="shape=doubleArrow;whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=#007FFF;sketch=0;fillStyle=auto;strokeColor=#000000;fontFamily=Georgia;fontSize=11;fontColor=#FFFFFF;fillColor=default;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="3730" y="505" width="400" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
