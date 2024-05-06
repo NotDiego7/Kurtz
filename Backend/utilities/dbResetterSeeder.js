@@ -1,3 +1,4 @@
+// utilities/dbResetterSeeder.js
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../config/config.env') });
 

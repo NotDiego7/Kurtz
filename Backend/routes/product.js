@@ -1,5 +1,7 @@
+// routes/product.js
 const express = require('express');
 const router = express.Router();
+
 
 const { newProduct, updateProduct, getProduct, getAllProducts, deleteProduct } = require('../controllers/productController');
 
